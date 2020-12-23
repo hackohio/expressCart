@@ -1,6 +1,6 @@
 {
-    "cartTitle": "CLOTH",
-    "cartDescription": "expressCart",
+    "cartTitle": "Test",
+    "cartDescription": "Testing",
     "cartLogo": "",
     "baseUrl": "http://localhost:1111",
     "emailHost": "smtp-mail.outlook.com",
@@ -8,17 +8,17 @@
     "emailSecure": false,
     "emailUser": "hi@markmoffat.com",
     "emailPassword": "this_is_the_smtp_password",
-    "emailAddress": "hi@markmoffat.com",
+    "emailAddress": "cae5511@gmail.com",
     "productsPerRow": 3,
     "productsPerPage": 6,
     "footerHtml": "&lt;h4 class=&quot;text-center&quot;&gt;Powered by expressCart&lt;/h4&gt;",
     "googleAnalytics": "",
     "injectJs": "",
     "customCss": "",
-    "currencySymbol": "£",
+    "currencySymbol": "$",
     "currencyISO": "USD",
     "paymentGateway": [
-        "stripe" 
+        "stripe"
     ],
     "databaseConnectionString": "mongodb://127.0.0.1:27017/expresscart",
     "theme": "Cloth",
@@ -47,5 +47,9 @@
         }
     },
     "showRelatedProducts": true,
-    "showHomepageVariants": false
+    "showHomepageVariants": false,
+    "secretCookie": "ef8742966fc113f2f7b3a2bf190348ef96130c53",
+    "secretSession": "07eed43fc8000b291cbb0c5887bd5c024fa0e26e",
+    "themeViews": "../views/themes/Cloth/",
+    "env": ""
 }
