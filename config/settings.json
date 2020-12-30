@@ -1,6 +1,6 @@
 {
-    "cartTitle": "Test",
-    "cartDescription": "Testing",
+    "cartTitle": "Make OHI/O 2021 Kit Builder",
+    "cartDescription": "Kit builder for Make/Bio Hack 2021 Event",
     "cartLogo": "",
     "baseUrl": "http://localhost:1111",
     "emailHost": "smtp-mail.outlook.com",
@@ -8,14 +8,14 @@
     "emailSecure": false,
     "emailUser": "hi@markmoffat.com",
     "emailPassword": "this_is_the_smtp_password",
-    "emailAddress": "cae5511@gmail.com",
+    "emailAddress": "dummyemail@gmail.com",
     "productsPerRow": 3,
     "productsPerPage": 6,
     "footerHtml": "&lt;h4 class=&quot;text-center&quot;&gt;Powered by expressCart&lt;/h4&gt;",
     "googleAnalytics": "",
     "injectJs": "",
     "customCss": "",
-    "currencySymbol": "$",
+    "currencySymbol": "Credits ",
     "currencyISO": "USD",
     "paymentGateway": [
         "stripe"
