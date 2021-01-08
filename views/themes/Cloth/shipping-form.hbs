@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-12 col-md-12">
         <div class="form-group">
-            <input type="email" class="form-control customerDetails" id="shipEmail" name="shipEmail" minlength="5" placeholder="Email address" value="{{@root.session.customerEmail}}" required>
+            <input type="email" class="form-control customerDetails" id="shipEmail" name="shipEmail" minlength="5" placeholder="Email address used for registration process" value="{{@root.session.customerEmail}}" required>
             <div class="invalid-feedback">
                 Please enter a valid email address
             </div>
@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-12 col-md-12">
         <div class="form-group">
-            <input type="text" class="form-control customerDetails" id="shipCompany" name="shipCompany" placeholder="Company name" value="{{@root.session.customerCompany}}">
+            <input type="text" class="form-control customerDetails" id="shipCompany" name="shipCompany" placeholder="Team Name used during registration" value="{{@root.session.customerCompany}}">
         </div>
     </div>
     <div class="col-sm-12 col-md-6">

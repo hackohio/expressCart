@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 const ObjectId = require('mongodb').ObjectID;
+const maxCredits = 60;
 const {
     getId,
     hooker,
@@ -620,6 +621,11 @@ router.post('/product/updatecart', async (req, res, next) => {
             }
         }
     }
+    const previousTotalItemPrice = req.session.cart[cartItem.cartId] && req.session.cart[cartItem.cartId].totalItemPrice
+    //check if additional product will cost too much
+    if(((productQuantity * productPrice) + req.session.totalCartNetAmount) - previousTotalItemPrice > maxCredits){
+        return res.status(400).json({ message: 'There is insufficient credits for this product.' });
+    }
 
     // Update the cart
     req.session.cart[cartItem.cartId].quantity = productQuantity;
@@ -655,7 +661,6 @@ router.post('/product/removefromcart', async (req, res, next) => {
     if(Object.keys(req.session.cart).length === 0){
         return emptyCart(req, res, 'json');
     }
-
     // Update cart in DB
     await db.cart.updateOne({ sessionId: req.session.id }, {
         $set: { cart: req.session.cart }
@@ -777,7 +782,10 @@ router.post('/product/addtocart', async (req, res, next) => {
             }
         }
     }
-
+    //check if additional product will cost too much
+    if(((productQuantity * productPrice) + req.session.totalCartNetAmount)  > maxCredits){
+        return res.status(400).json({ message: 'There is insufficient credits for this product.' });
+    }
     // if exists we add to the existing value
     let cartQuantity = 0;
     if(req.session.cart[productCartId]){
