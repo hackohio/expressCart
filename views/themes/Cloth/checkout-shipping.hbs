@@ -3,13 +3,13 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item" aria-current="page"><a href="/checkout/information">Information</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/shipping">Shipping</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/payment">Payment</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/shipping">Confirmation</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/payment">Completion</a></li>
         </ol>
     </nav>
     <div class="row">
         <div class="col-12 col-md-5 bottom-pad-15">
-            <div class="card top-marg-15 bottom-marg-15">
+            {{!-- <div class="card top-marg-15 bottom-marg-15">
                 <div class="card-body">
                     <h5 class="card-title">{{ @root.__ "Shipping options" }}</h5>
                     {{#unless @root.session.shippingOptions}}
@@ -22,9 +22,11 @@
                         </ul>
                     {{/unless}}
                 </div>
+            </div> --}}
+            <div>
+                    <a href="/checkout/information" class="btn btn-primary float-left">{{ @root.__ "Return to Confirmation" }}</a>
+                    <a href="/checkout/payment" class="btn btn-primary float-right">{{ @root.__ "Proceed to Complete Kit" }}</a>
             </div>
-            <a href="/checkout/information" class="btn btn-primary float-left">{{ @root.__ "Return to information" }}</a>
-            <a href="/checkout/payment" class="btn btn-primary float-right">{{ @root.__ "Proceed to payment" }}</a>
         </div>
         <div id="cart" class="col-md-7 d-none d-sm-block">
             {{> (getTheme 'cart')}}

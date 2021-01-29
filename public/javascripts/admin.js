@@ -411,11 +411,6 @@ $(document).ready(function (){
             showNotification(result.message, 'success');
             $('#orderFirstName').val(result.customer.firstName);
             $('#orderLastName').val(result.customer.lastName);
-            $('#orderAddress1').val(result.customer.address1);
-            $('#orderAddress2').val(result.customer.address2);
-            $('#orderCountry').val(result.customer.country);
-            $('#orderState').val(result.customer.state);
-            $('#orderPostcode').val(result.customer.postcode);
             $('#orderPhone').val(result.customer.phone);
         })
         .fail(function(msg){
@@ -434,11 +429,6 @@ $(document).ready(function (){
                     email: $('#customerEmail').val(),
                     firstName: $('#orderFirstName').val(),
                     lastName: $('#orderLastName').val(),
-                    address1: $('#orderAddress1').val(),
-                    address2: $('#orderAddress2').val(),
-                    country: $('#orderCountry').val(),
-                    state: $('#orderState').val(),
-                    postcode: $('#orderPostcode').val(),
                     phone: $('#orderPhone').val(),
                     orderComment: $('#orderComment').val()
                 }
@@ -499,11 +489,6 @@ $(document).ready(function (){
                     email: $('#email').val(),
                     firstName: $('#firstName').val(),
                     lastName: $('#lastName').val(),
-                    address1: $('#address1').val(),
-                    address2: $('#address2').val(),
-                    country: $('#country').val(),
-                    state: $('#state').val(),
-                    postcode: $('#postcode').val(),
                     phone: $('#phone').val()
                 }
             })

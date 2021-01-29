@@ -97,8 +97,8 @@ handlebars = handlebars.create({
             }
             return total;
         },
-        partial: (provider) => {
-            return `partials/payments/${provider}`;
+        partial: () => {
+            return 'partials/payments/instore';
         },
         perRowClass: (numProducts) => {
             if(parseInt(numProducts) === 1){
@@ -246,7 +246,7 @@ handlebars = handlebars.create({
         },
         paymentMessage: (status) => {
             if(status === 'Paid'){
-                return '<h2 class="text-success">Your payment has been successfully processed</h2>';
+                return '<h2 class="text-success">You have successfully built your kit!!</h2>';
             }
             if(status === 'Pending'){
                 const paymentConfig = getPaymentConfig();

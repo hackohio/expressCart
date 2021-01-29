@@ -142,11 +142,11 @@ router.post('/admin/order/create', async (req, res, next) => {
         orderCompany: req.body.company || req.session.customerCompany,
         orderFirstname: req.body.firstName || req.session.customerFirstname,
         orderLastname: req.body.lastName || req.session.customerLastname,
-        orderAddr1: req.body.address1 || req.session.customerAddress1,
+        /* orderAddr1: req.body.address1 || req.session.customerAddress1,
         orderAddr2: req.body.address2 || req.session.customerAddress2,
         orderCountry: req.body.country || req.session.customerCountry,
         orderState: req.body.state || req.session.customerState,
-        orderPostcode: req.body.postcode || req.session.customerPostcode,
+        orderPostcode: req.body.postcode || req.session.customerPostcode, */
         orderPhoneNumber: req.body.phone || req.session.customerPhone,
         orderComment: req.body.orderComment || req.session.orderComment,
         orderStatus: req.body.orderStatus,
