@@ -253,13 +253,13 @@ handlebars = handlebars.create({
                 if(config.paymentGateway === 'instore'){
                     return `<h2 class="text-warning">${paymentConfig.resultMessage}</h2>`;
                 }
-                return '<h2 class="text-warning">The payment for this order is pending. We will be in contact shortly.</h2>';
+                return '<h2 class="text-warning">Your kit order has been completed and we are working on putting it together now!</h2>';
             }
-            return '<h2 class="text-danger">Your payment has failed. Please try again or contact us.</h2>';
+            return '<h2 class="text-danger">Your order has failed. Please try again or contact us.</h2>';
         },
         paymentOutcome: (status) => {
             if(status === 'Paid' || status === 'Pending'){
-                return '<h5 class="text-warning">Please retain the details above as a reference of payment</h5>';
+                return '<h5 class="text-warning">Please retain the details above as a reference of your order</h5>';
             }
             return '';
         },
