@@ -505,14 +505,9 @@ $(document).ready(function (){
     });
 
     $(document).on('click', '#finishedOrderGoHome', function(e){
-        $('#finishOrderConfirm').attr('data-func', 'emptyCart');
+        window['emptyCart']();
     });
 
-    $(document).on('click', '#finishOrderConfirm', function(e){
-        // Get the function and run it
-        var func = $(e.target).attr('data-func');
-        window[func]();
-    });
 
     $('.qty-btn-minus').on('click', function(){
         var number = parseInt($('#product_quantity').val()) - 1;
