@@ -504,6 +504,16 @@ $(document).ready(function (){
         $('#confirmModal').modal('hide');
     });
 
+    $(document).on('click', '#finishedOrderGoHome', function(e){
+        $('#finishOrderConfirm').attr('data-func', 'emptyCart');
+    });
+
+    $(document).on('click', '#finishOrderConfirm', function(e){
+        // Get the function and run it
+        var func = $(e.target).attr('data-func');
+        window[func]();
+    });
+
     $('.qty-btn-minus').on('click', function(){
         var number = parseInt($('#product_quantity').val()) - 1;
         $('#product_quantity').val(number > 0 ? number : 1);
