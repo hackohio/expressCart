@@ -3,13 +3,18 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item" aria-current="page"><a href="/checkout/information">Information</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/shipping">Shipping</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/payment">Payment</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/shipping">Confirmation</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/payment">Completion</a></li>
         </ol>
     </nav>
     <div class="row">
         <div class="col-12 col-md-5 bottom-pad-15">
-            <div class="card top-marg-15 bottom-marg-15">
+                <h3 style="text-align: center;">
+                    Please review your kit and make sure everything is correct.
+                </h3>
+            
+            
+            {{!-- <div class="card top-marg-15 bottom-marg-15">
                 <div class="card-body">
                     <h5 class="card-title">{{ @root.__ "Shipping options" }}</h5>
                     {{#unless @root.session.shippingOptions}}
@@ -22,14 +27,16 @@
                         </ul>
                     {{/unless}}
                 </div>
-            </div>
-            <a href="/checkout/information" class="btn btn-primary float-left">{{ @root.__ "Return to information" }}</a>
-            <a href="/checkout/payment" class="btn btn-primary float-right">{{ @root.__ "Proceed to payment" }}</a>
+            </div> --}}
         </div>
         <div id="cart" class="col-md-7 d-none d-sm-block">
             {{> (getTheme 'cart')}}
             <div class="row">
                 <div class="col-sm-12 {{showCartButtons @root.session.cart}} cart-buttons">
+                    
+                    <a href="/checkout/information" class="btn btn-primary float-left">{{ @root.__ "Return to Information" }}</a>
+                    <a href="/checkout/payment" class="btn btn-primary float-center">{{ @root.__ "Proceed to Complete Kit" }}</a>
+                    
                     <button class="btn btn-danger float-right" id="empty-cart" type="button">{{ @root.__ "Empty cart" }}</button>
                 </div>
             </div>

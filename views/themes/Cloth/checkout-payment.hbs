@@ -3,8 +3,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item" aria-current="page"><a href="/checkout/information">Information</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/shipping">Shipping</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/payment">Payment</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="/checkout/shipping">Confirmation</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/checkout/payment">Completion</a></li>
         </ol>
     </nav>
     <div class="row">
@@ -22,7 +22,7 @@
                             <span class="float-right"><a href="/checkout/information">Change</a></span>
                         </li>
                     </ul>
-                    <ul class="list-group bottom-pad-15">
+                    {{!-- <ul class="list-group bottom-pad-15">
                         {{#ifCond @root.session.totalCartShipping '>' 0}}
                         <li class="list-group-item">
                             <div class="row">
@@ -38,8 +38,8 @@
                         {{else}}
                         <li class="list-group-item">FREE shipping <span class="float-right"><a href="/checkout/shipping">Change</a></span></li>
                         {{/ifCond}}
-                    </ul>
-                    {{#if @root.config.modules.loaded.discount}}
+                    </ul> --}}
+                    {{!-- {{#if @root.config.modules.loaded.discount}}
                     <div class="input-group bottom-pad-15">
                         <input class="form-control" id="discountCode" type="search" placeholder="{{ @root.__ "Discount code" }}" value="{{@root.session.discountCode}}">
                         <div class="input-group-append">
@@ -49,7 +49,7 @@
                             <button class="btn btn-outline-danger" id="removeDiscountCode">{{{feather 'x'}}}</button>
                         </div>
                     </div>
-                    {{/if}}
+                    {{/if}} --}}
                     <div id="payment-form" class="payment-form">
                     {{#if session.customerPresent}}
                         <ul class="list-group bottom-pad-15">
