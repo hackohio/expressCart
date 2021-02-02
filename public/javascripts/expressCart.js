@@ -504,6 +504,11 @@ $(document).ready(function (){
         $('#confirmModal').modal('hide');
     });
 
+    $(document).on('click', '#finishedOrderGoHome', function(e){
+        window['emptyCart']();
+    });
+
+
     $('.qty-btn-minus').on('click', function(){
         var number = parseInt($('#product_quantity').val()) - 1;
         $('#product_quantity').val(number > 0 ? number : 1);
