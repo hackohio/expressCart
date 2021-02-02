@@ -97,8 +97,8 @@ handlebars = handlebars.create({
             }
             return total;
         },
-        partial: (provider) => {
-            return `partials/payments/${provider}`;
+        partial: () => {
+            return 'partials/payments/instore';
         },
         perRowClass: (numProducts) => {
             if(parseInt(numProducts) === 1){
@@ -246,20 +246,20 @@ handlebars = handlebars.create({
         },
         paymentMessage: (status) => {
             if(status === 'Paid'){
-                return '<h2 class="text-success">Your payment has been successfully processed</h2>';
+                return '<h2 class="text-success">You have successfully built your kit!!</h2>';
             }
             if(status === 'Pending'){
                 const paymentConfig = getPaymentConfig();
                 if(config.paymentGateway === 'instore'){
                     return `<h2 class="text-warning">${paymentConfig.resultMessage}</h2>`;
                 }
-                return '<h2 class="text-warning">The payment for this order is pending. We will be in contact shortly.</h2>';
+                return '<h2 class="text-warning">Your kit order has been completed and we are working on putting it together now!</h2>';
             }
-            return '<h2 class="text-danger">Your payment has failed. Please try again or contact us.</h2>';
+            return '<h2 class="text-danger">Your order has failed. Please try again or contact us.</h2>';
         },
         paymentOutcome: (status) => {
             if(status === 'Paid' || status === 'Pending'){
-                return '<h5 class="text-warning">Please retain the details above as a reference of payment</h5>';
+                return '<h5 class="text-warning">Please retain the details above as a reference of your order</h5>';
             }
             return '';
         },

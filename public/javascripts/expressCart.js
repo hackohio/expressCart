@@ -165,12 +165,12 @@ $(document).ready(function (){
                     company: $('#shipCompany').val(),
                     firstName: $('#shipFirstname').val(),
                     lastName: $('#shipLastname').val(),
-                    address1: $('#shipAddr1').val(),
+                    /* address1: $('#shipAddr1').val(),
                     address2: $('#shipAddr2').val(),
                     country: $('#shipCountry').val(),
                     state: $('#shipState').val(),
-                    postcode: $('#shipPostcode').val(),
-                    phone: $('#shipPhoneNumber').val(),
+                    postcode: $('#shipPostcode').val(),*/
+                    phone: $('#shipPhoneNumber').val(), 
                     password: $('#newCustomerPassword').val(),
                     orderComment: $('#orderComment').val()
                 }
@@ -276,11 +276,11 @@ $(document).ready(function (){
                 $('#shipEmail').val(customer.email);
                 $('#shipFirstname').val(customer.firstName);
                 $('#shipLastname').val(customer.lastName);
-                $('#shipAddr1').val(customer.address1);
+                /* $('#shipAddr1').val(customer.address1);
                 $('#shipAddr2').val(customer.address2);
                 $('#shipCountry').val(customer.country);
                 $('#shipState').val(customer.state);
-                $('#shipPostcode').val(customer.postcode);
+                $('#shipPostcode').val(customer.postcode); */
                 $('#shipPhoneNumber').val(customer.phone);
                 location.reload();
             })
@@ -303,11 +303,11 @@ $(document).ready(function (){
                     company: $('#shipCompany').val(),
                     firstName: $('#shipFirstname').val(),
                     lastName: $('#shipLastname').val(),
-                    address1: $('#shipAddr1').val(),
+                    /* address1: $('#shipAddr1').val(),
                     address2: $('#shipAddr2').val(),
                     country: $('#shipCountry').val(),
                     state: $('#shipState').val(),
-                    postcode: $('#shipPostcode').val(),
+                    postcode: $('#shipPostcode').val(), */
                     phone: $('#shipPhoneNumber').val(),
                     password: $('#newCustomerPassword').val(),
                     orderComment: $('#orderComment').val()
@@ -666,11 +666,11 @@ function updateCartDiv(){
         var totalAmount = numeral(session.totalCartAmount).format('0.00');
 
         // Work out the shipping
-        var shippingTotalAmt = numeral(session.totalCartShipping).format('0.00');
+        /* var shippingTotalAmt = numeral(session.totalCartShipping).format('0.00');
         var shippingTotal = `${session.shippingMessage} :<strong id="shipping-amount">${result.currencySymbol}${shippingTotalAmt}</strong>`;
         if(session.totalCartShipping === 0){
             shippingTotal = `<span id="shipping-amount">${session.shippingMessage}</span>`;
-        }
+        } */
 
         var discountTotalAmt = numeral(session.totalCartDiscount).format('0.00');
         var discountTotal = '';
@@ -753,9 +753,6 @@ function updateCartDiv(){
         var cartTotalsHtml = `
             <div class="d-flex flex-row">
                 <div class="cart-contents-shipping col-md-12 no-pad-right">
-                    <div class="text-right">
-                        ${shippingTotal}
-                    </div>
                     ${discountTotal}
                     <div class="text-right">
                         Total:

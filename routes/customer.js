@@ -30,11 +30,11 @@ router.post('/customer/create', async (req, res) => {
         company: req.body.company,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        address1: req.body.address1,
+        /* address1: req.body.address1,
         address2: req.body.address2,
         country: req.body.country,
         state: req.body.state,
-        postcode: req.body.postcode,
+        postcode: req.body.postcode, */
         phone: req.body.phone,
         password: bcrypt.hashSync(req.body.password, 10),
         created: new Date()
@@ -70,11 +70,11 @@ router.post('/customer/create', async (req, res) => {
             req.session.customerCompany = customerReturn.company;
             req.session.customerFirstname = customerReturn.firstName;
             req.session.customerLastname = customerReturn.lastName;
-            req.session.customerAddress1 = customerReturn.address1;
+            /* req.session.customerAddress1 = customerReturn.address1;
             req.session.customerAddress2 = customerReturn.address2;
             req.session.customerCountry = customerReturn.country;
             req.session.customerState = customerReturn.state;
-            req.session.customerPostcode = customerReturn.postcode;
+            req.session.customerPostcode = customerReturn.postcode; */
             req.session.customerPhone = customerReturn.phone;
             req.session.orderComment = req.body.orderComment;
 
@@ -95,11 +95,11 @@ router.post('/customer/save', async (req, res) => {
         company: req.body.company,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        address1: req.body.address1,
+        /* address1: req.body.address1,
         address2: req.body.address2,
         country: req.body.country,
         state: req.body.state,
-        postcode: req.body.postcode,
+        postcode: req.body.postcode, */
         phone: req.body.phone
     };
 
@@ -115,11 +115,6 @@ router.post('/customer/save', async (req, res) => {
     req.session.customerCompany = customerObj.company;
     req.session.customerFirstname = customerObj.firstName;
     req.session.customerLastname = customerObj.lastName;
-    req.session.customerAddress1 = customerObj.address1;
-    req.session.customerAddress2 = customerObj.address2;
-    req.session.customerCountry = customerObj.country;
-    req.session.customerState = customerObj.state;
-    req.session.customerPostcode = customerObj.postcode;
     req.session.customerPhone = customerObj.phone;
     req.session.orderComment = req.body.orderComment;
 
@@ -167,11 +162,6 @@ router.post('/customer/update', async (req, res) => {
         email: req.body.email,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        address1: req.body.address1,
-        address2: req.body.address2,
-        country: req.body.country,
-        state: req.body.state,
-        postcode: req.body.postcode,
         phone: req.body.phone
     };
 
@@ -205,11 +195,6 @@ router.post('/customer/update', async (req, res) => {
             req.session.customerCompany = customerObj.company;
             req.session.customerFirstname = customerObj.firstName;
             req.session.customerLastname = customerObj.lastName;
-            req.session.customerAddress1 = customerObj.address1;
-            req.session.customerAddress2 = customerObj.address2;
-            req.session.customerCountry = customerObj.country;
-            req.session.customerState = customerObj.state;
-            req.session.customerPostcode = customerObj.postcode;
             req.session.customerPhone = customerObj.phone;
             req.session.orderComment = req.body.orderComment;
 
@@ -230,11 +215,6 @@ router.post('/admin/customer/update', restrict, async (req, res) => {
         email: req.body.email,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        address1: req.body.address1,
-        address2: req.body.address2,
-        country: req.body.country,
-        state: req.body.state,
-        postcode: req.body.postcode,
         phone: req.body.phone
     };
 
@@ -407,11 +387,6 @@ router.post('/admin/customer/lookup', restrict, async (req, res, next) => {
         req.session.customerCompany = customer.company;
         req.session.customerFirstname = customer.firstName;
         req.session.customerLastname = customer.lastName;
-        req.session.customerAddress1 = customer.address1;
-        req.session.customerAddress2 = customer.address2;
-        req.session.customerCountry = customer.country;
-        req.session.customerState = customer.state;
-        req.session.customerPostcode = customer.postcode;
         req.session.customerPhone = customer.phone;
 
         return res.status(200).json({
@@ -467,11 +442,6 @@ router.post('/customer/login_action', async (req, res) => {
         req.session.customerCompany = customer.company;
         req.session.customerFirstname = customer.firstName;
         req.session.customerLastname = customer.lastName;
-        req.session.customerAddress1 = customer.address1;
-        req.session.customerAddress2 = customer.address2;
-        req.session.customerCountry = customer.country;
-        req.session.customerState = customer.state;
-        req.session.customerPostcode = customer.postcode;
         req.session.customerPhone = customer.phone;
 
         res.status(200).json({

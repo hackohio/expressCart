@@ -97,11 +97,11 @@ $(document).ready(function (){
                                 shipCompany: $('#shipCompany').val(),
                                 shipFirstname: $('#shipFirstname').val(),
                                 shipLastname: $('#shipLastname').val(),
-                                shipAddr1: $('#shipAddr1').val(),
+                                /* shipAddr1: $('#shipAddr1').val(),
                                 shipAddr2: $('#shipAddr2').val(),
                                 shipCountry: $('#shipCountry').val(),
                                 shipState: $('#shipState').val(),
-                                shipPostcode: $('#shipPostcode').val(),
+                                shipPostcode: $('#shipPostcode').val(), */
                                 shipPhoneNumber: $('#shipPhoneNumber').val(),
                                 payment: JSON.stringify(state.data.paymentMethod)
                             }
