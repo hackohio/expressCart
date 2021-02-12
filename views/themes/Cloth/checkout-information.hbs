@@ -21,11 +21,11 @@
         <div class="col-12 col-md-5 bottom-pad-15">
             <div class="card top-marg-15">
                 <div class="card-body customer-details-login">
-                    <h5 class="card-heading">{{ @root.__ "Customer details" }}</h5>
+                    <h2 class="card-heading">{{ @root.__ "Customer details" }}</h2>
                     {{#unless @root.session.customerPresent}}
                     <div class="row">
                         <div class="col-sm-12 bottom-marg-15">
-                            <p>{{ @root.__ "Existing customer" }}</p>
+                            <h5>{{ @root.__ "Existing customer" }}</h5>
                             <div class="form-group">
                                 <input type="email" class="form-control" id="customerLoginEmail" name="loginEmail"
                                     minlength="5" placeholder="Email address used for registration process" required>
@@ -43,6 +43,9 @@
                                     type="submit">Login</button>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                       <strong> <h3>New Customer:</h3></strong>
                     </div>
                     {{/unless}}
                     {{#if @root.session.customerPresent}}
